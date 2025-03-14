@@ -5,7 +5,6 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.example.Configuration.ConfigReader;
-import org.example.Pages.HomePage;
 import org.example.Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
