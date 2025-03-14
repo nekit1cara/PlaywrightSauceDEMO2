@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 public class LoginPageTest {
 
     LoginPage loginPage;
-    HomePage homePage;
     Playwright playwright = Playwright.create();
     BrowserType chromium = playwright.chromium();
     Browser browser = chromium.launch(new BrowserType.LaunchOptions().setHeadless(false));
@@ -26,7 +25,6 @@ public class LoginPageTest {
     public void setUp() {
         page.navigate(ConfigReader.getProperty("baseUrl"));
         loginPage = new LoginPage(page);
-        homePage = new HomePage(page);
     }
 
 
@@ -40,17 +38,6 @@ public class LoginPageTest {
     public void loginIntoTheApplication() {
         loginPage.loginIntoApplication();
     }
-
-    @Test(priority = 3)
-    public void verifyProductName() {
-       homePage.getProductNameAndVerifyIt();
-    }
-
-    @Test(priority = 4)
-    public void logoutFromTheApplication() {
-        homePage.logoutApplication();
-    }
-
 
     @AfterTest
     public void closeBrowser() {

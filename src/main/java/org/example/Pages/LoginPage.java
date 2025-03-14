@@ -3,6 +3,7 @@ package org.example.Pages;
 import com.microsoft.playwright.Page;
 import org.example.Configuration.ConfigReader;
 import org.example.Elements.LoginPageElements;
+import org.example.Exceptions.LoginPageException;
 
 public class LoginPage {
 
@@ -25,8 +26,8 @@ public class LoginPage {
             page.fill(loginPageElements.getPasswordField(), password);
             page.click(loginPageElements.getLoginButton());
 
-            if (page.isVisible(loginPageElements.getLogo())) {
-                System.out.println("Login Successful!");
+            if (!page.isVisible(loginPageElements.getLogo())) {
+               throw new LoginPageException("Logo is not visible, login failed");
             }
 
     }

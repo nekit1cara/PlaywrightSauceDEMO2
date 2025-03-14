@@ -10,4 +10,5 @@ public class HomePageElements {
     private final String appNavigateMenu = "//*[@id='menu_button_container']/div/div[3]/div/button";
     private final String logoutButton = "//a[@id = 'logout_sidebar_link']";
     private final String logo = "//div[@class = 'login_logo']";
+    private final String appFooter = "//footer[@class = 'footer']";
 }
